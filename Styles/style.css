@@ -1,0 +1,168 @@
+body {
+    background: linear-gradient(120deg, #a18cd1 0%, #fbc2eb 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    min-height: 100vh;
+}
+@font-face {
+    font-family: "MyFont";
+    src: url("../Assets/Arima-VariableFont_wght.ttf") format("truetype");
+}
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin: 2rem 0 2rem 0;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.product-section {
+    margin: 2rem auto;
+    max-width: 1400px;
+    padding: 2rem 1rem;
+    box-shadow: 0 4px 16px rgba(161, 140, 209, 0.12);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.2rem 1.5rem;
+    justify-items: center;
+    align-items: stretch;
+}
+
+.product-card {
+    background: linear-gradient(120deg, #3a1297c4 0%, #d655b197 100%);
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(161, 140, 209, 0.18);
+    padding: 1.2rem 1rem 1.7rem 1rem;
+    text-align: center;
+    color: #ffffff;
+    width: 100%;
+    max-width: 240px;
+    min-height: 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 8px 32px 0 rgba(161, 140, 209, 0.25);
+}
+
+.product-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    background: #fff;
+    cursor: pointer;
+}
+
+.product-title {
+    font-size: 1.1rem;
+    margin: 0.5rem 0 0.2rem 0;
+    color: #5b1465;
+}
+
+.product-category {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.price-box {
+    margin: 0.5rem 0 1rem 0;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-right: 0.5rem;
+}
+
+.price-box del {
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.add-to-cart {
+    background: linear-gradient(120deg, #461da5 0%, #851264 100%);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 0.7rem 2rem;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(161, 140, 209, 0.12);
+    transition: background 0.3s, transform 0.2s;
+    margin-top: 0.5rem;
+} 
+
+.add-to-cart:hover {
+    background: linear-gradient(90deg, #ffb6ea 0%, #a18cd1 100%);
+    transform: scale(1.05);
+} 
+
+@media (max-width: 1200px) {
+    .product-section {
+        max-width: 98vw;
+    }
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem 1rem;
+    }
+    .product-card {
+        max-width: 200px;
+        min-height: 370px;
+    }
+    .product-img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 992px) {
+    .button-container {
+        justify-content: center;
+    }
+    .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 1.2rem 0.7rem;
+    }
+    .product-card {
+        max-width: 180px;
+        min-height: 320px;
+        padding: 1rem 0.5rem 1.2rem 0.5rem;
+    }
+    .product-img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    .product-section {
+        padding: 1rem 0.2rem;
+    }
+    .product-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.7rem 0.4rem;
+    }
+    .product-card {
+        max-width: 98vw;
+        min-height: 220px;
+        padding: 0.7rem 0.2rem 1rem 0.2rem;
+    }
+    .product-img {
+        height: 200px;
+    }
+}

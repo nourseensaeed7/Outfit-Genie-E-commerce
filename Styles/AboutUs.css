@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("../Assets/Arima-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+    background: linear-gradient(360deg, rgba(241, 230, 240, 0.148) 0%, rgba(174, 114, 198, 0.884) 100%);
+    font-family: 'PT Serif', serif;
+    color: #5b1465;
+    text-align: center;
+    margin: 0;
+    transition: background 1.5s ease;
+  }
+  
+  
+  .about {
+    max-width: 1200px;
+    min-height: 550px;
+    margin-top: 50px;
+    margin: auto;
+    padding: 20px;
+  }
+  .about-img {
+    width: 30%; /*Takes up more space*/
+    height: auto;
+    margin-right: 2rem;/
+  }
+ 
+  .about-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+  }
+
+  .about-info {
+    margin: 2rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: left;
+}
+  
+  
+  .about-info p {
+    width: 60%; /* Adjust text width to balance image */
+    font-size: 1.3rem;
+    margin: 0;
+    text-align: justify;
+  }
+  
+  
+  h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0px;
+  }
+  .slogan {
+    font-family: 'Satisfy', cursive;
+    font-size: 1.1rem;
+    margin-top: 3px;
+    margin-bottom: 30px;
+    transition: opacity 0.5s ease; /* Add this to existing .slogan */
+    min-height: 1.5em; /* Prevent layout shift when quotes change */
+    display: inline-block;
+    
+  }
+  
+  
+  @media (max-width: 768px) {
+    .about-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .about-img {
+        width: 60%;
+        margin-right: 0;
+        margin-bottom: 2rem;
+    }
+  
+    .about-info p {
+      font-size: 1rem;
+      padding: 0 10px;
+      width: 100%;
+    }
+  
+    h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      padding: 10px;
+    }
+  
+    .about-info p {
+      font-size: 0.9rem;
+    }
+  
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+  

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover stylish outfits with Outfitgenie – your smart fashion shopping assistant. Explore trending clothes, personalized recommendations, and exclusive deals all in one place.">
+
+    <title>Outfitgenie</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="../Assets/logo2.png">
+    <link rel="Stylesheet" type="text/css" href="../Styles/main.css">
+    <link rel="Stylesheet" type="text/css" href="../Styles/Normalize.css">
+    <link rel="Stylesheet" type="text/css" href="../Styles/Navbar.css">
+    <link rel="Stylesheet" type="text/css" href="../Styles/footer.css">
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/cart.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="../Scripts/main.js"></script>
+
+</head>
+
+<body>
+    <nav>
+        <span id="logo"><img src="../Assets/logo.png" alt="logo"  style="height:50px;width:70px;"></span>
+
+        <ul>
+            <li class="hideonmobile"><a href="../Pages/index.html">Home</a></li>
+            <li class="hideonmobile"><a href="../Pages/shop.html">Shop</a></li>
+            <li class="hideonmobile"><a href="../Pages/blog.html">Blogs</a></li>
+            <li class="hideonmobile"><a href="../Pages/AboutUs.html" target="_self">About us</a></li>
+            <li class="hideonmobile" onclick="togglemenu()"><a><i class="fa-regular fa-user"></i></a></li>
+            <li class="hideonmobile" id="cart-icon" ><a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <span class="itemcount"></span></li>
+            <li class="menubutton"><a href="#" onclick=showSidebar()><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+
+        <ul class="sidebar">
+            <li onclick=hidesidebar()><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+            <li><a href="../Pages/user.html"><i class="fa-solid fa-user-pen"></i>&nbsp;Edit Profile</a></li>
+            <li><a href="../Pages/login.html"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Login/regeister</a></li>
+            <li id="side-cart-icon" onclick=hidesidebar()><a href="#"><i
+                        class="fa-solid fa-cart-shopping"></i>&nbsp;Cart</a></li>
+            <li><a href="../Pages/index.html"><i class="fa-solid fa-house"></i>&nbsp;Home</a></li>
+            <li><a href="../Pages/shop.html"><i class="fa-solid fa-shop"></i>&nbsp;Shop</a></li>
+            <li><a href="../Pages/blog.html"><i class="fa-solid fa-star"></i>&nbsp;Blogs</a></li>
+            <li><a href="../Pages/AboutUs.html"><i class="fa-solid fa-building"></i> &nbsp;About us</a></li>
+            <li onclick=logout()><a href=""><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Logout</a></li>
+        </ul>
+
+        <div class="submenuwrap" id="submenu">
+            <div class="submenu">
+                <a href="../Pages/user.html" class="submenulink">
+                    <i class="fa-solid fa-user-pen"></i>
+                    <p>Edit Profile</p>
+                </a>
+                <a href="../Pages/login.html" class="submenulink">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <p>Login/Register</p>
+                </a>
+                <a href="#" class="submenulink" onclick="logout(event)">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <p>Logout</p>
+                </a>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <!-- welcome page and poster -->
+    <div class="container">
+        <div class="left-section">
+            <h1>♡ Welcome to Outfitgenie!!</h1>
+            <p>Discover our new collection and get ready for vibrant colors<br> and<br>bold patterns this summer.</p>
+            <p>➤ <strong>Explore the latest fashion trends,<br>discover unique styles,<br>shop with friends,<br>and
+                    more.</strong></p>
+            <a href="../Pages/blog.html"> <button class="explore-button">Explore more</button></a>
+        </div>
+
+        <div class="right-section">
+            <!-- <img src="../Assets/pinkbg.jpg" alt="Fashion Image"> -->
+            <img src="../Assets/crop.jpeg" alt="Fashion Image">
+        </div>
+    </div>
+
+    <!-- cart -->
+
+    <div class="cart">
+        <h2 class="carttitle">Your Cart</h2>
+        <div class="cartcontent">
+            <!-- <div class="cartbox">
+                <img src="img.jpeg" class="cartimg">
+                <div class="cartdetail">
+                    <h2 class="cartproduct">Women Top</h2>
+                    <span class="cartprice">$45</span>
+                    <div class="cartquantity">
+                        <button id="decrement">-</button>
+                        <span class="number">1</span>
+                        <button id="increment">+</button>
+                    </div>
+                </div>
+                <i class="fa-solid fa-trash cartremove"></i>
+            </div> -->
+        </div>
+        <div class="total">
+            <div class="totaltitle">Total</div>
+            <div class="totalprice">$0</div>
+        </div>
+        <button class="btnbuy">Buy Now</button>
+        <i class="ri-close-line" id="cartclose"></i>
+    </div>
+
+    <!-- shop now poster -->
+    <section class="home">
+        <section id="hero">
+            <div class="hero-content">
+                <h4>Trade-in Offer</h4>
+                <h2>Unlock Epic Deals,</h2>
+                <h1>On all products!</h1>
+                <p>Every Outfit Tells a Story - What's Yours?</p>
+                <div class="button-container">
+                    <a href="../Pages/shop.html"><button>Shop Now</button></a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="../Assets/girls finaalll.png" alt="Fashion Models" />
+            </div>
+        </section>
+        <!-- homecollection items -->
+        <section class="collection">
+            <h2 class="title">Latest Collection</h2>
+            <p class="subtitle">Dive into a vast collection of clothing and accessories that cater to every taste and
+                occasion.</p>
+
+            <div class="products">
+                <div class="product-card" data-category="Tops">
+                    <img src="../Assets/pinktop.jpeg" alt="Pink Corset Top" class="product-img">
+                    <h4 class="product-title">Pink Corset Top</h4>
+                    <p class="product-category">Tops</p>
+                    <div class="price-box">
+                        <span class="price">$55</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+                <div class="product-card" data-category="Tops">
+                    <img src="../Assets/whitetop.jpg" alt="Square Neck Ruched Hanky Hem Tee" class="product-img">
+                    <h4 class="product-title">Square Neck Ruched Hanky Hem Tee</h4>
+                    <p class="product-category">Tops</p>
+                    <div class="price-box">
+                        <span class="price">$16</span>
+                        <del>$22</del>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+                </div>
+
+
+
+
+                <div class="product-card" data-category="Tops">
+                    <img src="../Assets/floraltop.jpg" alt="Floral Top" class="product-img">
+
+                    <h4 class="product-title">Floral Top</h4>
+                    <p class="product-category">Tops</p>
+                    <div class="price-box">
+                        <span class="price">$55</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+
+                </div>
+
+                <div class="product-card" data-category="Tops">
+                    <img src="../Assets/knittop.jpg" alt="Knit Top" class="product-img">
+
+                    <h4 class="product-title">Knit Top</h4>
+                    <p class="product-category">Tops</p>
+                    <div class="price-box">
+                        <span class="price">$55</span>
+                    </div>
+                    <button class="add-to-cart">Add to Cart</button>
+
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer>
+        <div class="col1">
+            <h3>Useful links</h3>
+            <a href="../Pages/index.html">Home</a>
+            <a href="../Pages/shop.html">Shop</a>
+            <a href="../Pages/AboutUs.html">About Us</a>
+        </div>
+        <div class="col2">
+            <h3>Newsletter</h3>
+            <form>
+                <input type="email" placeholder="Enter your email address" required>
+                <br> <br>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="col3">
+            <h3>Contact us</h3>
+            <p>Smouha Grand Ville, El Nasr street , Smouha ,Alexandria</p>
+            <div class="socialicons">
+                <i class='bx bxl-facebook-circle'></i>
+                <i class='bx bxl-instagram'></i>
+                <i class='bx bxl-twitter'></i>
+                <i class='bx bxl-tiktok'></i>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => { //DOMContentLoaded loads code after html code fully loaded
+            const imageElements = document.querySelectorAll(".product-img");
+
+            imageElements.forEach(img => {
+                img.addEventListener("click", () => {
+                    const title = img.closest(".product-card").querySelector(".product-title").textContent; // finds the nearest parent (including the element itself) that matches CSS selector.
+                    const product = products.find(p => p.title === title); //find the product in the list
+
+                    if (product) {
+                        sessionStorage.setItem("selectedProduct", JSON.stringify(product));
+                        window.location.href = "product.html";
+                    } else {
+                        console.warn("Product not found for title:", title);
+                    }
+                });
+            });
+        });
+
+    </script>
+    <script src="../Scripts/main.js" defer></script>
+    <script src="../Scripts/shop.js" defer></script>
+    <script src="../Scripts/cart.js" defer></script>
+    <script src="../Scripts/navbar.js" defer></script>
+    <script src="../Scripts/login.js" defer></script>
+
+
+</body>
+
+</html>

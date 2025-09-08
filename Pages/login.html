@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover stylish outfits with Outfitgenie – your smart fashion shopping assistant. Explore trending clothes, personalized recommendations, and exclusive deals all in one place.">
+  <title>Outfitgenie</title>
+  <link rel="icon" type="image/x-icon" href="../Assets/logo2.png">
+  <link rel="Stylesheet" type="text/css" href="../Styles/Normalize.css">
+  <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../Styles/login.css" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" />
+</head>
+
+<body>
+
+
+  <div class="container">
+    <!-- login -->
+    <div class="form_box login">
+      <form action="">
+        <h1>Log in</h1>
+        <div class="input_box">
+          <input type="text" placeholder="Username" required />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input_box">
+          <input type="password" id="login-password" placeholder="password" required />
+          <!-- <i class="bx bxs-lock-alt"></i> -->
+          <i class="fa-solid fa-eye-slash" alt="eye" class="eye" id="login-eye" onclick="PasswordVisibility('login')"></i>
+        </div>
+        <div class="forgot_password">
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <p>or login with social platforms</p>
+        <div class="social-icons">
+          <a href="#"><i class='bx bxl-google'></i>
+            <a href="#"><i class='bx bxl-facebook-circle'></i>
+              <a href="#"><i class='bx bxl-gmail'></i>
+        </div>
+      </form>
+    </div>
+
+    <!-- register -->
+    <div class="form_box register">
+      <form action="">
+        <h1>Registeration</h1>
+        <div class="input_box">
+          <input type="text" placeholder="Username" required />
+          <i class="bx bxs-user"></i>
+        </div>
+        <div class="input_box">
+          <input type="email" placeholder="Email" required />
+          <i class='bx bxs-envelope'></i>
+        </div>
+        <div class="input_box">
+          <input type="password" id="register-password" placeholder="password" required />
+          <!-- <i class="bx bxs-lock-alt"></i> -->
+          <i class="fa-solid fa-eye-slash" alt="eye" class="eye" id="register-eye" onclick="PasswordVisibility('register')"></i>
+        </div>
+        <button type="submit" class="btn">Register</button>
+        <p>or register with social platforms</p>
+              <!-- <div class="social-icons">               
+                  <a href="#"><i class='bx bxl-google' ></i>
+                  <a href="#"><i class='bx bxl-facebook-circle' ></i>
+                  <a href="#"><i class='bx bxl-gmail' ></i>
+              </div> -->
+      </form>
+    </div>
+
+    <div class="toggle-box">
+      <div class="toggle-panel toggle-left">
+        <h1>Hello, Welcome!</h1>
+        <p>Don't have an account?</p>
+        <button class="btn register-btn">Register</button>
+      </div>
+      <div class="toggle-panel toggle-right">
+        <h1>Welcome Back!</h1>
+        <p>Already have an account?</p>
+        <button class="btn login-btn">Login</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="../Scripts/login.js"></script>
+
+</body>
+
+</html>

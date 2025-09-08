@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover stylish outfits with Outfitgenie – your smart fashion shopping assistant. Explore trending clothes, personalized recommendations, and exclusive deals all in one place.">
+
+    <title>Outfitgenie</title>
+    <link rel="icon" type="image/x-icon" href="../Assets/logo2.png">
+    <link rel="Stylesheet" type="text/css" href="../Styles/Normalize.css">
+    <link rel="Stylesheet" type="text/css" href="../Styles/Navbar.css">
+    <link rel="Stylesheet" type="text/css" href="../Styles/footer.css">
+    <link rel="stylesheet" href="../Styles/cart.css">
+    <link rel="stylesheet" href="../Styles/style.css">
+    <link rel="stylesheet" href="../Styles/slider.css">
+    <link rel="stylesheet" href="..//Styles/product.css">
+    <link rel='stylesheet' href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+
+</head>
+
+<body>
+    <nav>
+        <span id="logo"><img src="../Assets/logo.png" alt="logo"  style="height:50px;width:70px;"></span>
+
+        <ul>
+            <li class="hideonmobile"><a href="../Pages/index.html">Home</a></li>
+            <li class="hideonmobile"><a href="../Pages/shop.html">Shop</a></li>
+            <li class="hideonmobile"><a href="../Pages/blog.html">Blogs</a></li>
+            <li class="hideonmobile"><a href="../Pages/AboutUs.html" target="_self">About us</a></li>
+            <li class="hideonmobile" onclick="togglemenu()"><a><i class="fa-regular fa-user"></i></a></li>
+            <li class="hideonmobile" id="cart-icon"><a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <span class="itemcount"></span></li>
+            <li class="menubutton"><a href="#" onclick=showSidebar()><i class="fa-solid fa-bars"></i></a></li>
+        </ul>
+
+        <ul class="sidebar">
+            <li onclick=hidesidebar()><a href="#"><i class="fa-solid fa-xmark"></i></a></li>
+            <li><a href="../Pages/user.html"><i class="fa-solid fa-user-pen"></i>&nbsp;Edit Profile</a></li>
+            <li><a href="../Pages/login.html"><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Login/regeister</a></li>
+            <li id="side-cart-icon" onclick=hidesidebar()><a href="#"><i
+                        class="fa-solid fa-cart-shopping"></i>&nbsp;Cart</a></li>
+            <li><a href="../Pages/index.html"><i class="fa-solid fa-house"></i>&nbsp;Home</a></li>
+            <li><a href="../Pages/shop.html"><i class="fa-solid fa-shop"></i>&nbsp;Shop</a></li>
+            <li><a href="../Pages/blog.html"><i class="fa-solid fa-star"></i>&nbsp;Blogs</a></li>
+            <li><a href="../Pages/AboutUs.html"><i class="fa-solid fa-building"></i> &nbsp;About us</a></li>
+            <li onclick=logout()><a href=""><i class="fa-solid fa-right-to-bracket"></i>&nbsp;Logout</a></li>
+        </ul>
+
+        <div class="submenuwrap" id="submenu">
+            <div class="submenu">
+                <a href="../Pages/user.html" class="submenulink">
+                    <i class="fa-solid fa-user-pen"></i>
+                    <p>Edit Profile</p>
+                </a>
+                <a href="../Pages/login.html" class="submenulink">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    <p>Login/Register</p>
+                </a>
+                <a href="#" class="submenulink" onclick="logout(event)">
+                    <i class="fa-solid fa-circle-xmark"></i>
+                    <p>Logout</p>
+                </a>
+
+            </div>
+        </div>
+
+    </nav>
+
+    <div id="product">
+        <div class="product-details">
+            <div class="slider">
+                <div class="left-content">
+                    <div class="slidercontainer">
+                        <div id="slidenumber" class="slidenumber"></div>
+                    </div>
+
+                    <div class="slidercontrol">
+                        <span id="prev" class="prev">Previous</span>
+                        <span class="indicators">
+                            <ul id="indicator-ul">
+                            </ul>
+                        </span>
+                        <span id="next" class="next">Next</span>
+                    </div>
+                </div>
+                <br>
+                <br>
+                <div class="Reviews">
+                    <h2><strong>Customer Reviews</strong></h2><br>
+
+
+                    <h3>All Reviews</h3>
+                    <hr>
+                    <br>
+                    <div class="reviews" id="reviews"></div>
+                    <div class="rating">
+                        <span id="rating">0</span>/5
+                    </div>
+                    <div class="stars" id="stars">
+                        <span class="star" data-value="1"> <i class="fa-solid fa-star"></i></span>
+                        <span class="star" data-value="2"><i class="fa-solid fa-star"></i></span>
+                        <span class="star" data-value="3"><i class="fa-solid fa-star"></i></span>
+                        <span class="star" data-value="4"><i class="fa-solid fa-star"></i></span>
+                        <span class="star" data-value="5"><i class="fa-solid fa-star"></i></span>
+                    </div>
+                    <div class="area">
+
+                        <textarea id="review">
+                    </textarea>
+                        <button id="submit">Submit</button>
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+            <div class="details">
+                <h1 class="title" id="productName"></h1>
+                <div class="rating">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div class="price" id="productPrice"></div>
+                <hr><br>
+
+                <div class="size-guide">
+                    <div><strong>Size</strong></div>
+                </div>
+
+                <div class="title">
+                    <div class="size-option"></div>
+                </div>
+                <hr><br>
+
+                <div class="color-guide">
+                    <div><strong>Color</strong></div>
+                </div>
+
+                <div class="title">
+                    <div class="color-option"></div>
+                </div>
+
+                <br>
+                <hr>
+                <br>
+
+                <div class="quantity">
+                    <div>Quantity</div>
+                    <button id="decrease">-</button>
+                    <div id="qty">1</div>
+                    <button id="increase">+</button>
+                </div>
+
+                <div class="add-to-basket" id="addToBasket">
+                    <button class="add-to-cart"> Add to Cart</button>
+                </div>
+
+                <h3>Materials:</h3>
+                <p class="materials"></p>
+                <br>
+                <h3>Description:</h3>
+                <p class="description"></p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="product-collection">
+        <h1>Customer Also View</h1>
+        <div class="product-grid" id="productGrid"></div>
+    </div>
+
+    <div class="cart">
+        <span class="itemcount"></span>
+        <h2 class="carttitle">Your Cart</h2>
+        <div class="cartcontent">
+
+        </div>
+        <div class="total">
+            <div class="totaltitle">Total</div>
+            <div class="totalprice">$0</div>
+        </div>
+        <button class="btnbuy">Buy Now</button>
+        <i class="ri-close-line" id="cartclose"></i>
+    </div>
+
+
+
+    <footer>
+        <div class="col1">
+            <h3>Useful links</h3>
+            <a href="#">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About Us</a>
+        </div>
+        <div class="col2">
+            <h3>Newsletter</h3>
+            <form>
+                <input type="email" placeholder="Enter your email address" required>
+                <br> <br>
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+        <div class="col3">
+            <h3>Contact us</h3>
+            <p>Smouha Grand Ville, El Nasr street , Smouha ,Alexandria</p>
+            <div class="socialicons">
+                <i class='bx bxl-facebook-circle'></i>
+                <i class='bx bxl-instagram'></i>
+                <i class='bx bxl-twitter'></i>
+                <i class='bx bxl-tiktok'></i>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <script src="../Scripts/slider.js"></script>
+    <script src="../Scripts/shop.js"></script>
+    <script src="../Scripts/productDisplay.js"></script>
+    <script src="../Scripts/cart.js"></script>
+    <script src="../Scripts/navbar.js"></script>
+    <script src="../Scripts/login.js"></script>
+
+</body>
+
+</html>
